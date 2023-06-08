@@ -1,0 +1,29 @@
+.liststy {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logopx {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+}
+.titledomainurl {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 30px;
+}
+.childlistcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.btnsty {
+  background-color: transparent;
+  border-style: none;
+}
