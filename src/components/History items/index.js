@@ -14,7 +14,7 @@ const MyHistoryItem = props => {
       <div className="childlistcontainer">
         <div className="titledomainurl">
           <img src={logoUrl} alt="domain logo" className="logopx" />
-          <p>{title}:</p>
+          <h1 className="headingtitle">{title}:</h1>
           <p>{domainUrl}</p>
         </div>
         <button

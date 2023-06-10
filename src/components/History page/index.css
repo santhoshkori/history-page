@@ -5,6 +5,22 @@
   flex-direction: row;
   justify-content: space-around;
 }
+.nohistcontainer {
+  height: 100vh;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.unordercontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 .searcontainer {
   display: flex;
   flex-direction: row;

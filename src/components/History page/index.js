@@ -17,7 +17,8 @@ class MyHistoryPage extends Component {
       eachdelete => eachdelete.id !== id,
     )
     console.log(deletefilteredlidt)
-    this.setState({listhistory: deletefilteredlidt})
+
+    this.setState({listhistory: {HistoryList: deletefilteredlidt}})
   }
 
   render() {
@@ -28,6 +29,26 @@ class MyHistoryPage extends Component {
     const mylist = HistoryList.filter(eachhis =>
       eachhis.title.toLowerCase().includes(searchinput),
     )
+    let mylisttoupdate
+    if (mylist.length <= 0) {
+      mylisttoupdate = (
+        <ul className="nohistcontainer">
+          <p>There is no history to show</p>
+        </ul>
+      )
+    } else {
+      mylisttoupdate = (
+        <ul className="unorderlistty">
+          {mylist.map(eachitem => (
+            <MyHistoryItem
+              Historyitem={eachitem}
+              key={eachitem.id}
+              myclick={this.ClickDeleteButton}
+            />
+          ))}
+        </ul>
+      )
+    }
 
     return (
       <div>
@@ -49,15 +70,7 @@ class MyHistoryPage extends Component {
             />
           </div>
         </div>
-        <ul className="unorderlistty">
-          {mylist.map(eachitem => (
-            <MyHistoryItem
-              Historyitem={eachitem}
-              key={eachitem.id}
-              myclick={this.ClickDeleteButton}
-            />
-          ))}
-        </ul>
+        {mylisttoupdate}
       </div>
     )
   }
